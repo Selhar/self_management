@@ -16,11 +16,13 @@ services:
     volumes:
       - ./docker/db/pgdata:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: postgres
+      POSTGRES_DB: selfmanagement
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: kanban
+      POSTGRES_USER: postgres
 
   # :: Optional pgadmin interface ::
+  #    - Log in with pgadmin4@pgadmin.org and password admin
+  #    - the default database is either POSTGRES_DB or POSTGRES_USER 
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4
