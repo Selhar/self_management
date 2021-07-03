@@ -1,12 +1,10 @@
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column as Column, Integer, String
+from pydantic import BaseModel
 
-Base = declarative_base()
-
-class Cards(Base):
-    __tablename__ = "cards"    
-
-    id = Column(Integer, primary_key=True, index=True)
-    text = Column(String, nullable=False)
-    position = Column(Integer, nullable=False)
-    age = Column(Integer)
+class Cards(BaseModel):
+    id: int
+    text: str
+    position: int
+    column_id: int    
+    
+    class Config:
+        orm_mode = True

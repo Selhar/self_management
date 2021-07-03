@@ -1,5 +1,5 @@
-from src.models.base import Base
-from sqlalchemy import Column as Column, Integer, String, ForeignKey
+from src.models.base_class import Base
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 class Cards(Base):
     __tablename__ = "cards"    
