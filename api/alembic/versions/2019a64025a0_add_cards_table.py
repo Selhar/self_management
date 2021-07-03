@@ -22,7 +22,7 @@ def upgrade():
         sa.Column('id', sa.Integer, primary_key=True),
         sa.Column('text', sa.String(250), nullable=False),
         sa.Column('position', sa.Integer, nullable=False, unique=True),
-        sa.Column('column_id', sa.Integer, sa.ForeignKey("columns.id"), nullable=False, unique=True),
+        sa.Column('column_id', sa.Integer, sa.ForeignKey("columns.id"), nullable=False),
     )
 
 def downgrade():
